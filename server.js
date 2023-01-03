@@ -8,11 +8,14 @@ const app = express()
 
 // Configure the app 
 
-
+app.set('view engine', 'ejs')
 
 // Mount routes 
 
-
+/// GET - localhost:3000/home
+app.get('/home', function(req, res) {
+  res.render('home')
+})
 
 // Tell the app to listen on port 3000 
 
