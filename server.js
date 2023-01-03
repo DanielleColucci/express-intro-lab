@@ -1,6 +1,7 @@
 // import modules 
 
 import express from 'express'
+import { books } from "./data/book-data.js"
 
 // create Express app
 
@@ -15,6 +16,13 @@ app.set('view engine', 'ejs')
 /// GET - localhost:3000/home
 app.get('/home', function(req, res) {
   res.render('home')
+})
+
+/// GET - localhost:3000/books
+app.get('/books', function(req, res) {
+  res.render('books/index', {
+    books : books
+  })
 })
 
 // Tell the app to listen on port 3000 
