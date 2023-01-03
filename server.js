@@ -13,6 +13,11 @@ app.set('view engine', 'ejs')
 
 // Mount routes 
 
+/// GET - localhost:3000/
+app.get('/', function(req, res) {
+  res.redirect('/home')
+})
+
 /// GET - localhost:3000/home
 app.get('/home', function(req, res) {
   res.render('home')
