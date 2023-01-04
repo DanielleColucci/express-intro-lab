@@ -2,6 +2,8 @@
 
 import express from 'express'
 import { books } from "./data/book-data.js"
+import path from 'path'
+import { fileURLToPath } from 'url'
 
 // create Express app
 
@@ -10,6 +12,12 @@ const app = express()
 // Configure the app 
 
 app.set('view engine', 'ejs')
+
+// Mount middleware - app.use
+
+app.use(
+  express.static(path.join(path.dirname(fileURLToPath(import.meta.url)), 'public'))
+)
 
 // Mount routes 
 
